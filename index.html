@@ -474,13 +474,13 @@
 <script>
 (function(){
   const PRODUCTS = [
-    { slug:'bonsucesso', label:'Bonsucesso', campaign:'FB-LIL-LPS-LUZIAC_Bonsucesso_emp_0008_prod_REM22794', seedTotal:0 }, // TODO verba
-    { slug:'clube-maia', label:'Clube Maia', campaign:'FB-LIL-LPS-LUZIAC_ClubeMaia_emp_0008_prod_REM23128', seedTotal:0 }, // TODO verba
-    { slug:'europa-pinda', label:'Europa Residence Club Pindamonhangaba', campaign:'FB-LIL-LPS-LUZIAC_EuropaResidenceClubPindamonhangaba_emp_0008_prod_REM20715', seedTotal:0 }, // TODO verba
-    { slug:'europa-rafard', label:'Europa Residencial Rafard', campaign:'FB-LIL-LPS-LUZIAC_EuropaResidencialRafard_emp_0008_prod_REM22205', seedTotal:0 }, // TODO verba
-    { slug:'sol-moment', label:'Sol Moment', campaign:'FB-LIL-LPS-LUZIAC_SolMoment_emp_0008_prod_REM25383', seedTotal:0 }, // TODO verba
-    { slug:'reserva-santa-isabel-3', label:'Reserva Santa Isabel III', campaign:'FB-LIL-LPS-LUZIAC_ReservaSantaIsabelIII_emp_0008_prod_REM25569', seedTotal:0 }, // TODO verba
-    { slug:'forest-house', label:'Forest House', campaign:'FB-LIL-LPS-LUZIAC_ForestHouse_emp_0008_prod_REM24232', seedTotal:0 }, // TODO verba
+    { slug:'bonsucesso', label:'Bonsucesso', campaign:'FB-LIL-LPS-LUZIAC_Bonsucesso_emp_0008_prod_REM22794', seedTotal:20140 },
+    { slug:'clube-maia', label:'Clube Maia', campaign:'FB-LIL-LPS-LUZIAC_ClubeMaia_emp_0008_prod_REM23128', seedTotal:18184 },
+    { slug:'europa-pinda', label:'Europa Residence Club Pindamonhangaba', campaign:'FB-LIL-LPS-LUZIAC_EuropaResidenceClubPindamonhangaba_emp_0008_prod_REM20715', seedTotal:36484 },
+    { slug:'europa-rafard', label:'Europa Residencial Rafard', campaign:'FB-LIL-LPS-LUZIAC_EuropaResidencialRafard_emp_0008_prod_REM22205', seedTotal:18177 },
+    { slug:'sol-moment', label:'Sol Moment', campaign:'FB-LIL-LPS-LUZIAC_SolMoment_emp_0008_prod_REM25383', seedTotal:10750 },
+    { slug:'reserva-santa-isabel-3', label:'Reserva Santa Isabel III', campaign:'FB-LIL-LPS-LUZIAC_ReservaSantaIsabelIII_emp_0008_prod_REM25569', seedTotal:10320 },
+    { slug:'forest-house', label:'Forest House', campaign:'FB-LIL-LPS-LUZIAC_ForestHouse_emp_0008_prod_REM24232', seedTotal:5160 },
   ];
 
   // Gasto acumulado em campanhas anteriores a 2026 (fora do período que puxamos do
@@ -515,13 +515,13 @@
   // aporte. Padrão: renovação dia 10 de cada mês; alguns produtos recebem
   // adiantado e ficam com a data mais à frente que os demais.
   const VERBA_VALID_UNTIL = {
-    'bonsucesso': '2026-11-10', // TODO confirmar
-    'clube-maia': '2026-11-10', // TODO confirmar
-    'europa-pinda': '2026-11-10', // TODO confirmar
-    'europa-rafard': '2026-11-10', // TODO confirmar
-    'sol-moment': '2026-11-10', // TODO confirmar
-    'reserva-santa-isabel-3': '2026-11-10', // TODO confirmar
-    'forest-house': '2026-11-10', // TODO confirmar
+    'bonsucesso': '2026-11-10',
+    'clube-maia': '2026-11-10',
+    'europa-pinda': '2026-11-10',
+    'europa-rafard': '2026-11-10',
+    'sol-moment': '2026-11-10',
+    'reserva-santa-isabel-3': '2026-11-10',
+    'forest-house': '2026-11-10',
   };
   const BRL = n => (n||0).toLocaleString('pt-BR', {style:'currency', currency:'BRL'});
   const INT = n => Math.round(n||0).toLocaleString('pt-BR');
