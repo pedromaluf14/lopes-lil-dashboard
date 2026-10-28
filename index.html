@@ -1,0 +1,1185 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Lopes LIL — Painel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,800&display=swap">
+<script>document.documentElement.setAttribute('data-theme','light');</script>
+<style>
+  :root{
+    color-scheme: light;
+    --bg:            #FAF6F7;
+    --surface:       #FFFFFF;
+    --surface-2:     #FDF9FA;
+    --border:        #ECE0E4;
+    --ink:           #251920;
+    --ink-soft:      #4A3B42;
+    --muted:         #8C7680;
+    --accent:        #C31655;
+    --accent-ink:    #FFFFFF;
+    --accent-soft:   #F6DDE6;
+    --accent-line:   #E9A9C2;
+
+    --s1: #2a78d6;
+
+    --good:    #1B8A5A;
+    --good-bg: #E4F5EC;
+    --warn:    #B8720E;
+    --warn-bg: #FBEEDA;
+    --critical:    #C2530E;
+    --critical-bg: #FBE6D8;
+    --bad:     #C22A2A;
+    --bad-bg:  #FBE4E4;
+
+    --pink:      #EC1B6E;
+    --teal:      #17ABC0;
+    --teal-dark: #0B4F63;
+    --orange:    #F2941E;
+    --gold:      #F2B705;
+    --green:     #7CB342;
+
+    --shadow: 0 1px 2px rgba(37,25,32,.04), 0 10px 30px -12px rgba(37,25,32,.14);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      color-scheme: dark;
+      --bg:            #1B1418;
+      --surface:       #241B20;
+      --surface-2:     #2A1F25;
+      --border:        #3A2C32;
+      --ink:           #F5EBEF;
+      --ink-soft:      #D9C7CF;
+      --muted:         #A78F98;
+      --accent:        #F2508E;
+      --accent-ink:    #1B1418;
+      --accent-soft:   #3A1E2A;
+      --accent-line:   #6E2F49;
+      --s1: #3987e5;
+      --good:    #4FCB8F; --good-bg:#183226;
+      --warn:    #E3A73F; --warn-bg:#332512;
+      --critical: #F0894A; --critical-bg: #3A2412;
+      --bad:     #F0716B; --bad-bg: #3A1C1C;
+      --pink: #FF5B9E; --teal: #4FD3E6; --teal-dark: #1C7A93; --orange: #FFB35C; --gold: #FFD24D; --green: #9CCC65;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 30px -12px rgba(0,0,0,.5);
+    }
+  }
+  :root[data-theme="dark"]{
+    color-scheme: dark;
+    --bg:            #1B1418;
+    --surface:       #241B20;
+    --surface-2:     #2A1F25;
+    --border:        #3A2C32;
+    --ink:           #F5EBEF;
+    --ink-soft:      #D9C7CF;
+    --muted:         #A78F98;
+    --accent:        #F2508E;
+    --accent-ink:    #1B1418;
+    --accent-soft:   #3A1E2A;
+    --accent-line:   #6E2F49;
+    --s1: #3987e5;
+    --good:    #4FCB8F; --good-bg:#183226;
+    --warn:    #E3A73F; --warn-bg:#332512;
+    --critical: #F0894A; --critical-bg: #3A2412;
+    --bad:     #F0716B; --bad-bg: #3A1C1C;
+    --pink: #FF5B9E; --teal: #4FD3E6; --teal-dark: #1C7A93; --orange: #FFB35C; --gold: #FFD24D; --green: #9CCC65;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 30px -12px rgba(0,0,0,.5);
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:"Poppins", -apple-system, "Segoe UI", sans-serif;
+    padding-inline:20px; padding-block:28px 60px;
+  }
+  .wrap{ max-width:1080px; margin:0 auto; display:flex; flex-direction:column; gap:16px; }
+  h1,h2,h3{ font-family:"Poppins", sans-serif; text-wrap:balance; margin:0; }
+  .num{ font-family:"Poppins", sans-serif; font-variant-numeric:tabular-nums; }
+
+  .masthead{
+    background:linear-gradient(135deg, var(--accent), #8E0F3F);
+    color:var(--accent-ink);
+    border-radius:18px; padding:20px 24px;
+    display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap;
+    box-shadow:var(--shadow);
+  }
+  .masthead .tag{ font-size:11px; text-transform:uppercase; letter-spacing:.08em; opacity:.8; font-weight:700; }
+  .masthead h1{ font-size:21px; font-weight:800; margin-top:2px; }
+  .refresh{
+    background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.3); color:inherit;
+    border-radius:999px; padding:8px 16px; font-size:12.5px; font-weight:600;
+    font-family:inherit; cursor:pointer; display:flex; align-items:center; gap:7px; flex:none;
+  }
+  .refresh:hover{ background:rgba(255,255,255,.24); }
+  .refresh:disabled{ opacity:.6; cursor:default; }
+  .refresh .spin{ display:inline-block; animation:spin 1s linear infinite; }
+  @keyframes spin{ to{ transform:rotate(360deg); } }
+
+  .tabs{ display:flex; gap:6px; background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:4px; box-shadow:var(--shadow); }
+  .tab-btn{
+    flex:1; border:none; background:transparent; color:var(--muted); font-family:"Poppins"; font-weight:700;
+    font-size:13px; padding:9px 10px; border-radius:9px; cursor:pointer;
+  }
+  .tab-btn.active{ background:var(--good-bg); color:var(--good); }
+  .tab-panel{ display:none; flex-direction:column; gap:16px; }
+  .tab-panel.active{ display:flex; }
+
+  .period{
+    font-size:12.5px; color:var(--muted); font-weight:600;
+    display:flex; align-items:center; gap:6px;
+  }
+
+  .kpis{ display:flex; flex-direction:column; gap:12px; }
+  .kpi-hero{
+    background:linear-gradient(120deg, var(--good-bg), var(--surface) 70%);
+    border:1px solid var(--good); border-radius:16px; padding:20px 24px;
+    box-shadow:var(--shadow); display:flex; align-items:baseline; gap:16px; flex-wrap:wrap;
+  }
+  .kpi-hero .label{ font-size:12px; text-transform:uppercase; letter-spacing:.08em; color:var(--good); font-weight:700; }
+  .kpi-hero .value{ font-size:44px; font-weight:600; color:var(--ink); line-height:1; }
+  .kpi-hero .sub{ font-size:13px; color:var(--ink-soft); font-weight:500; }
+
+  .kpi-grid{ display:grid; grid-template-columns: repeat(4, 1fr); gap:12px; }
+  .kpi{
+    background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:14px 16px;
+    box-shadow:var(--shadow); display:flex; flex-direction:column; gap:5px; min-width:0;
+  }
+  .kpi .label{ font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); font-weight:600; }
+  .kpi .value{ font-size:20px; font-weight:600; color:var(--ink); line-height:1.15; }
+  @media (max-width:760px){ .kpi-grid{ grid-template-columns: 1fr 1fr; } .kpi-hero .value{ font-size:34px; } }
+
+  /* funil + dados secundários (mesma linguagem visual das páginas por produto) */
+  .kpi-row{ display:flex; gap:12px; align-items:stretch; flex-wrap:wrap; }
+  .kpi-left{ flex:2 1 300px; display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+  .tile{
+    background:var(--surface-2); border:1px solid var(--border); border-radius:12px; padding:11px 14px;
+    display:flex; flex-direction:column; gap:4px; justify-content:center; min-width:0;
+  }
+  .tile .l{ font-size:11px; color:var(--muted); font-weight:600; text-transform:uppercase; letter-spacing:.05em; }
+  .tile .v{ font-size:18px; font-weight:600; color:var(--ink); line-height:1.15; }
+  .funnel{ flex:1 1 190px; display:flex; flex-direction:column; align-items:stretch; justify-content:center; }
+  .fcard{
+    border-radius:11px; padding:9px 14px; display:flex; align-items:center; justify-content:space-between;
+    gap:10px; background:#5C1533; color:#fff;
+  }
+  .fcard.final{ background:var(--accent); color:var(--accent-ink); }
+  .fcard .l{ font-size:12.5px; font-weight:700; }
+  .fcard .v{ font-size:16px; font-weight:700; }
+  .fgap{ display:flex; justify-content:center; margin:-9px 0; z-index:2; }
+  .fgap span{
+    background:#1A1218; color:#fff; font-size:10.5px; font-weight:700;
+    padding:3px 10px; border-radius:999px; border:3px solid var(--surface);
+  }
+  @media (max-width:760px){ .kpi-left{ grid-template-columns:1fr 1fr; } }
+
+  .grid4{ display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+  @media (max-width:980px){ .grid4{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:560px){ .grid4{ grid-template-columns:1fr; } }
+  .dpanel{ background:var(--surface-2); border:1px solid var(--border); border-radius:12px; padding:12px 12px 10px; }
+  .dpanel h3{ margin:0 0 8px; font-family:"Poppins"; font-style:italic; font-weight:800; font-size:12.5px; text-align:center; color:var(--ink); }
+  .donut-wrap{ display:flex; flex-direction:column; align-items:center; gap:8px; }
+  .legend{ display:flex; flex-direction:column; gap:4px; width:100%; }
+  .legend .item{ display:flex; align-items:center; gap:6px; font-size:11px; color:var(--ink-soft); }
+  .legend .sw{ width:8px; height:8px; border-radius:3px; flex:none; }
+  .legend .pct{ margin-left:auto; font-weight:600; color:var(--ink); }
+  .seg{ cursor:default; transition:opacity .15s ease; }
+  .seg:hover{ opacity:.85; }
+  .tip{
+    position:fixed; pointer-events:none; z-index:50;
+    background:var(--ink); color:var(--surface);
+    font-family:"Poppins"; font-size:12px; font-weight:500;
+    padding:7px 10px; border-radius:8px;
+    box-shadow:0 6px 20px rgba(0,0,0,.25);
+    opacity:0; transform:translate(-50%,-100%); transition:opacity .1s ease;
+    white-space:nowrap;
+  }
+  .tip.show{ opacity:1; }
+  .tip b{ font-family:"Poppins"; font-weight:600; }
+
+  .panel{
+    background:var(--surface); border:1px solid var(--border); border-radius:16px;
+    padding:18px 20px; box-shadow:var(--shadow);
+  }
+  .panel h3{ font-size:14.5px; font-weight:700; }
+  .panel .panel-sub{ font-size:12px; color:var(--muted); margin-top:2px; margin-bottom:14px; }
+  .table-scroll{ max-height:168px; overflow-y:auto; }
+  .table-scroll thead th{ position:sticky; top:0; background:var(--surface); }
+
+  .filter-row{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+  .filter-row input[type=text]{ min-width:180px; }
+  .filter-row input{
+    flex:1; font-family:inherit; font-size:13px; padding:9px 12px; border-radius:10px;
+    border:1px solid var(--border); background:var(--surface-2); color:var(--ink);
+  }
+  .filter-row input:focus{ outline:2px solid var(--accent-line); outline-offset:1px; }
+  .selectbox{
+    font-family:inherit; font-size:13px; font-weight:600; padding:9px 12px; border-radius:10px;
+    border:1px solid var(--border); background:var(--surface-2); color:var(--ink); cursor:pointer;
+  }
+  .selectbox:focus{ outline:2px solid var(--accent-line); outline-offset:1px; }
+  .period-btn-group{ display:flex; gap:6px; flex-wrap:wrap; background:var(--surface); border:1px solid var(--border); border-radius:11px; padding:4px; }
+  .period-btn{
+    border:none; background:transparent; color:var(--muted); font-family:inherit; font-weight:600;
+    font-size:12.5px; padding:8px 12px; border-radius:8px; cursor:pointer; white-space:nowrap;
+  }
+  .period-btn.active{ background:var(--good-bg); color:var(--good); }
+  .custom-period{ display:none; align-items:center; gap:8px; }
+  .custom-period.show{ display:flex; }
+  .custom-period .to{ font-size:12px; color:var(--muted); }
+  .datebox{
+    font-family:inherit; font-size:13px; font-weight:600; padding:8px 10px; border-radius:10px;
+    border:1px solid var(--border); background:var(--surface-2); color:var(--ink); cursor:pointer;
+    color-scheme: light;
+  }
+  .datebox:focus{ outline:2px solid var(--accent-line); outline-offset:1px; }
+  /* ícone do calendário visível, na cor da marca */
+  .datebox::-webkit-calendar-picker-indicator{
+    opacity:1; cursor:pointer; width:18px; height:18px; padding:2px; margin-left:6px; border-radius:6px;
+    background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C31655' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4.5' width='18' height='17' rx='3'/%3E%3Cpath d='M3 9.5h18M8 2.5v4M16 2.5v4'/%3E%3C/svg%3E") center/18px 18px no-repeat; color:transparent;
+  }
+  .datebox::-webkit-calendar-picker-indicator:hover{ background-color:var(--accent-soft); }
+
+  .leadbar{ display:flex; align-items:center; gap:10px; }
+  .leadbar .track2{ flex:1; height:9px; background:var(--surface-2); border:1px solid var(--border); border-radius:5px; overflow:hidden; min-width:60px; }
+  .leadbar .fill2{ height:100%; background:var(--accent); border-radius:4px 0 0 4px; }
+  .leadbar .n{ min-width:26px; text-align:right; font-weight:600; }
+
+  /* comparativo com período anterior (Resumo rápido) */
+  .cmp-toggle{ display:flex; align-items:center; gap:8px; font-size:12.5px; font-weight:600; color:var(--ink-soft); cursor:pointer; white-space:nowrap; user-select:none; }
+  .cmp-toggle input{ appearance:none; width:34px; height:20px; border-radius:999px; background:var(--border); position:relative; cursor:pointer; transition:background .2s; margin:0; flex:none; }
+  .cmp-toggle input::after{ content:""; position:absolute; top:2px; left:2px; width:16px; height:16px; border-radius:50%; background:#fff; box-shadow:0 1px 2px rgba(0,0,0,.2); transition:transform .2s; }
+  .cmp-toggle input:checked{ background:var(--accent); }
+  .cmp-toggle input:checked::after{ transform:translateX(14px); }
+  .cell-v{ display:block; }
+  .delta{ display:inline-flex; align-items:center; gap:4px; margin-top:3px; font-size:11px; font-weight:600; white-space:nowrap; }
+  .delta .chg{ padding:1px 6px; border-radius:999px; }
+  .delta .chg.up-good, .delta .chg.down-good{ color:var(--good); background:var(--good-bg); }
+  .delta .chg.up-bad, .delta .chg.down-bad{ color:var(--bad); background:var(--bad-bg); }
+  .delta .chg.neutral{ color:var(--ink-soft); background:var(--surface-2); border:1px solid var(--border); }
+  .delta .prev{ color:var(--muted); font-weight:500; }
+  @media (max-width:640px){ .delta{ flex-direction:column; align-items:flex-end; gap:2px; } }
+  .no-cmp .delta{ display:none; }
+  tbody tr.total-row td{ border-top:2px solid var(--border); font-weight:700; background:var(--surface-2); }
+
+  table{ width:100%; border-collapse:collapse; }
+  thead th{
+    text-align:left; font-size:11px; text-transform:uppercase; letter-spacing:.05em; color:var(--muted);
+    font-weight:600; padding:0 10px 8px; border-bottom:1px solid var(--border);
+  }
+  thead th.num-col, tbody td.num-col{ text-align:right; }
+  tbody td{ padding:11px 10px; border-bottom:1px solid var(--border); font-size:13.5px; }
+  tbody tr:last-child td{ border-bottom:none; }
+  tbody td.name{ font-weight:600; color:var(--ink); }
+  tbody tr.hidden{ display:none; }
+
+  .budget-cell-static{ font-weight:600; }
+
+  .track{ height:9px; background:var(--surface-2); border:1px solid var(--border); border-radius:5px; overflow:hidden; min-width:70px; }
+  .fill{ height:100%; border-radius:4px 0 0 4px; transition:width .4s ease; }
+
+  .ring-wrap{ display:flex; align-items:center; gap:8px; }
+  .ring-track{ fill:none; stroke:var(--surface-2); stroke-width:5; }
+  .ring-fill{ fill:none; stroke-width:5; stroke-linecap:round; transition:stroke-dashoffset .5s ease, stroke .3s ease; transform:rotate(-90deg); transform-origin:50% 50%; }
+  .ring-label{ font-family:"Poppins"; font-size:12px; font-weight:600; fill:var(--ink); }
+
+  .pill{
+    display:inline-flex; align-items:center; gap:5px; font-size:11px; font-weight:600;
+    padding:3px 8px; border-radius:999px; white-space:nowrap;
+  }
+  .pill.good{ color:var(--good); background:var(--good-bg); }
+  .pill.warn{ color:var(--warn); background:var(--warn-bg); }
+  .pill.critical{ color:var(--critical); background:var(--critical-bg); }
+  .pill.bad{ color:var(--bad); background:var(--bad-bg); }
+  .pill.neutral-pill{ color:var(--muted); background:var(--surface-2); border:1px solid var(--border); font-weight:600; vertical-align:middle; margin-left:6px; }
+  .pill .dot{ width:6px; height:6px; border-radius:50%; background:currentColor; }
+
+  .skeleton{ background:linear-gradient(90deg,var(--surface-2),var(--border),var(--surface-2)); background-size:200% 100%; animation:sk 1.3s ease infinite; border-radius:6px; color:transparent!important; }
+  @keyframes sk{ 0%{background-position:200% 0} 100%{background-position:-200% 0} }
+
+  .notice{ border-radius:12px; padding:12px 16px; font-size:13px; line-height:1.5; display:flex; gap:10px; align-items:flex-start; }
+  .notice.warn{ background:var(--warn-bg); color:var(--warn); }
+  .notice.bad{ background:var(--bad-bg); color:var(--bad); }
+  .notice a{ color:inherit; font-weight:600; }
+
+  .save-state{ font-size:10.5px; color:var(--good); display:block; margin-top:2px; min-height:12px; }
+
+  footer{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:6px; font-size:11px; color:var(--muted); padding-top:2px; }
+  footer .gen{ font-family:"Poppins"; }
+
+  @media (max-width:640px){
+    .tabs{ flex-wrap:wrap; }
+    table{ font-size:12px; }
+  }
+</style>
+
+<div class="wrap">
+
+  <div class="masthead">
+    <div>
+      <div class="tag">LUZIAC · Lopes LIL</div>
+      <h1>Painel de campanhas</h1>
+    </div>
+    <button class="refresh" id="refreshBtn" type="button" title="Os dados são atualizados automaticamente a cada hora — este botão recarrega a versão mais recente.">
+      <span id="refreshIcon">&#8635;</span> Atualizar dados
+    </button>
+  </div>
+
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="resumo">Visão geral</button>
+    <button class="tab-btn" data-tab="produtos">Resumo rápido</button>
+    <button class="tab-btn" data-tab="verbas">Verbas</button>
+  </div>
+
+
+  <!-- ===== TAB: RESUMO GERAL ===== -->
+  <div class="tab-panel active" data-panel="resumo">
+    <div class="filter-row" style="gap:10px;">
+      <select id="resumoProduct" class="selectbox"></select>
+      <div class="period-btn-group" id="resumoPeriodBtns">
+        <button type="button" class="period-btn" data-period="7d">Últimos 7 dias</button>
+        <button type="button" class="period-btn active" data-period="month">Mês corrente</button>
+        <button type="button" class="period-btn" data-period="custom">Personalizado</button>
+      </div>
+      <span id="resumoCustomWrap" class="custom-period">
+        <input type="date" id="resumoCustomFrom" class="datebox" />
+        <span class="to">até</span>
+        <input type="date" id="resumoCustomTo" class="datebox" />
+      </span>
+    </div>
+    <div class="period"><span>&#128197;</span> <span id="resumoPeriod">—</span></div>
+    <div class="kpis">
+      <div class="kpi-hero">
+        <div>
+          <div class="label">Leads no período</div>
+          <div class="value num" id="resumoLeads">—</div>
+        </div>
+        <div class="sub" id="resumoReach">via formulário de anúncio</div>
+      </div>
+      <div class="kpi-grid" style="grid-template-columns:repeat(3,1fr)">
+        <div class="kpi"><div class="label">Investimento</div><div class="value num" id="resumoSpend">—</div></div>
+        <div class="kpi"><div class="label">Custo por lead</div><div class="value num" id="resumoCpl">—</div></div>
+        <div class="kpi"><div class="label">Impressões</div><div class="value num" id="resumoImpr">—</div></div>
+      </div>
+    </div>
+    <div class="panel">
+      <h3>Leads por dia</h3>
+      <div class="panel-sub" id="trendSub">&nbsp;</div>
+      <div id="trendWrap" style="width:100%; overflow-x:auto;"><svg id="trendChart" width="100%" height="190" viewBox="0 0 900 190" preserveAspectRatio="none" style="width:100%; height:190px; display:block;"></svg></div>
+    </div>
+
+    <div class="panel">
+      <div class="kpi-row">
+        <div class="kpi-left">
+          <div class="tile"><div class="l">CPM</div><div class="v num" id="resumoCpm">—</div></div>
+          <div class="tile"><div class="l">CPC Link</div><div class="v num" id="resumoCpcLink">—</div></div>
+          <div class="tile"><div class="l">CTR Link</div><div class="v num" id="resumoCtrLink">—</div></div>
+        </div>
+        <div class="funnel">
+          <div class="fcard"><span class="l">Impressões</span><span class="v num" id="resumoFunnelImpr">—</span></div>
+          <div class="fgap"><span id="resumoFunnelPct1">—</span></div>
+          <div class="fcard"><span class="l">Cliques no Link</span><span class="v num" id="resumoFunnelClicks">—</span></div>
+          <div class="fgap"><span id="resumoFunnelPct2">—</span></div>
+          <div class="fcard final"><span class="l">Leads</span><span class="v num" id="resumoFunnelLeads">—</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-sub" id="donutsSub" style="margin-bottom:12px">leads por gênero, idade, plataforma e dispositivo</div>
+      <div class="grid4">
+        <div class="dpanel"><h3>Leads por Gênero</h3><div class="donut-wrap"><svg width="104" height="104" viewBox="0 0 104 104" id="d-gender"></svg><div class="legend" id="l-gender"></div></div></div>
+        <div class="dpanel"><h3>Leads por Idade</h3><div class="donut-wrap"><svg width="104" height="104" viewBox="0 0 104 104" id="d-age"></svg><div class="legend" id="l-age"></div></div></div>
+        <div class="dpanel"><h3>Leads por Plataforma</h3><div class="donut-wrap"><svg width="104" height="104" viewBox="0 0 104 104" id="d-platform"></svg><div class="legend" id="l-platform"></div></div></div>
+        <div class="dpanel"><h3>Leads por Dispositivo</h3><div class="donut-wrap"><svg width="104" height="104" viewBox="0 0 104 104" id="d-device"></svg><div class="legend" id="l-device"></div></div></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>Campanhas</h3>
+      <div class="panel-sub">leads, custo por lead e investimento por produto no período selecionado</div>
+      <div class="table-scroll" style="overflow-x:auto;">
+        <table>
+          <thead>
+            <tr>
+              <th>Empreendimento</th>
+              <th class="num-col">Leads</th>
+              <th class="num-col">Custo por Lead</th>
+              <th class="num-col">Investimento</th>
+            </tr>
+          </thead>
+          <tbody id="campanhasBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== TAB: PRODUTOS ===== -->
+  <div class="tab-panel" data-panel="produtos">
+    <div class="period"><span>&#128197;</span> <span id="produtosPeriod">—</span></div>
+    <div class="panel">
+      <div class="filter-row">
+        <input id="productFilter" type="text" placeholder="Filtrar por produto…">
+        <label class="cmp-toggle" title="Compara com os 7 dias imediatamente anteriores, como o “Comparar” do Gerenciador de Anúncios">
+          <input type="checkbox" id="cmpToggle" checked> Comparar com 7 dias anteriores
+        </label>
+      </div>
+      <div id="produtosTableWrap" style="overflow-x:auto; margin-top:14px;">
+        <table>
+          <thead>
+            <tr>
+              <th>Produto</th>
+              <th class="num-col">Leads</th>
+              <th class="num-col">Custo/lead</th>
+              <th class="num-col">Investimento</th>
+            </tr>
+          </thead>
+          <tbody id="produtosBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== TAB: VERBAS ===== -->
+  <div class="tab-panel" data-panel="verbas">
+    <div class="period"><span>&#128197;</span> <span id="verbasPeriod">Saldo corrido</span></div>
+    <div class="panel">
+      <div class="panel-sub" style="margin-bottom:10px">Verba: soma de tudo que o cliente já enviou (atualizado pelo time via chat a cada novo aporte, nunca reseta sozinho) · Investido: acumulado desde 1º/jan/2026 (início do acompanhamento de verba), atualizado por hora · Gasto hoje: gasto do dia mais recente, somando os conjuntos do produto · Saldo: Verba − Investido · Válida até: data até quando a verba atual deve cobrir, conforme informado pelo cliente · Progresso: quanto da verba disponível no ciclo atual (desde o dia 10) já foi gasto — verde = dentro do ritmo até a data “Válida até”, amarelo/laranja = gastando mais rápido que o prazo, vermelho = verba estourada</div>
+      <div style="overflow-x:auto;">
+        <table>
+          <thead>
+            <tr>
+              <th>Produto</th>
+              <th class="num-col">Verba</th>
+              <th class="num-col">Investido</th>
+              <th class="num-col">Gasto hoje</th>
+              <th class="num-col">Saldo</th>
+              <th class="num-col">Válida até</th>
+              <th>Progresso</th>
+            </tr>
+          </thead>
+          <tbody id="verbasBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span>Leads = "Leads (formulário)" do Gerenciador de Anúncios do Meta · dados via Windsor.ai · conta Lopes LIL</span>
+    <span class="gen" id="updatedAt">—</span>
+  </footer>
+
+</div>
+
+<div class="tip" id="tip"></div>
+
+<script>
+(function(){
+  const PRODUCTS = [
+    { slug:'bonsucesso', label:'Bonsucesso', campaign:'FB-LIL-LPS-LUZIAC_Bonsucesso_emp_0008_prod_REM22794', seedTotal:0 }, // TODO verba
+    { slug:'clube-maia', label:'Clube Maia', campaign:'FB-LIL-LPS-LUZIAC_ClubeMaia_emp_0008_prod_REM23128', seedTotal:0 }, // TODO verba
+    { slug:'europa-pinda', label:'Europa Residence Club Pindamonhangaba', campaign:'FB-LIL-LPS-LUZIAC_EuropaResidenceClubPindamonhangaba_emp_0008_prod_REM20715', seedTotal:0 }, // TODO verba
+    { slug:'europa-rafard', label:'Europa Residencial Rafard', campaign:'FB-LIL-LPS-LUZIAC_EuropaResidencialRafard_emp_0008_prod_REM22205', seedTotal:0 }, // TODO verba
+    { slug:'sol-moment', label:'Sol Moment', campaign:'FB-LIL-LPS-LUZIAC_SolMoment_emp_0008_prod_REM25383', seedTotal:0 }, // TODO verba
+    { slug:'reserva-santa-isabel-3', label:'Reserva Santa Isabel III', campaign:'FB-LIL-LPS-LUZIAC_ReservaSantaIsabelIII_emp_0008_prod_REM25569', seedTotal:0 }, // TODO verba
+    { slug:'forest-house', label:'Forest House', campaign:'FB-LIL-LPS-LUZIAC_ForestHouse_emp_0008_prod_REM24232', seedTotal:0 }, // TODO verba
+  ];
+
+  // Gasto acumulado em campanhas anteriores a 2026 (fora do período que puxamos do
+  // Windsor), somado ao "Gasto total" para refletir o total investido desde que o
+  // produto começou a rodar, não só o ano corrente.
+  const PRE2026_SPEND = {};
+  // Gasto desde 1º/jan/2026 (período que de fato acompanhamos com verba) — é o
+  // que conta pra Investido/Saldo/Progresso na aba Verbas.
+  function ytdSpend(slug){
+    const doc = metricsCache[slug];
+    return doc && doc.daily ? doc.daily.reduce((s,r)=>s+(r.spend||0), 0) : 0;
+  }
+  // Gasto do dia mais recente disponível (hoje, somando o gasto já registrado nos
+  // conjuntos do produto) — mostrado na aba Verbas como referência diária, sem
+  // entrar na conta de Investido/Saldo/Progresso (que são acumulados).
+  function todaySpend(slug){
+    const doc = metricsCache[slug];
+    if(!doc || !doc.daily || !doc.daily.length) return 0;
+    const last = doc.daily[doc.daily.length - 1];
+    // só conta se o último dia com dados for hoje (campanha pausada = R$ 0 hoje)
+    return last.d === todayLocal() ? (last.spend || 0) : 0;
+  }
+  // Gasto desde que o produto começou a rodar de fato (inclui histórico anterior a
+  // 2026 quando existir) — é só informativo, usado no "Gasto total" do Resumo
+  // Rápido; não entra na conta da verba, que só rastreamos a partir de 2026.
+  function allTimeSpend(slug){
+    return ytdSpend(slug) + (PRE2026_SPEND[slug] || 0);
+  }
+
+  // Data até quando a verba atual (saldo corrido) deve cobrir o gasto do produto,
+  // conforme informado pelo cliente. Atualizado pelo time via chat a cada novo
+  // aporte. Padrão: renovação dia 10 de cada mês; alguns produtos recebem
+  // adiantado e ficam com a data mais à frente que os demais.
+  const VERBA_VALID_UNTIL = {
+    'bonsucesso': '2026-11-10', // TODO confirmar
+    'clube-maia': '2026-11-10', // TODO confirmar
+    'europa-pinda': '2026-11-10', // TODO confirmar
+    'europa-rafard': '2026-11-10', // TODO confirmar
+    'sol-moment': '2026-11-10', // TODO confirmar
+    'reserva-santa-isabel-3': '2026-11-10', // TODO confirmar
+    'forest-house': '2026-11-10', // TODO confirmar
+  };
+  const BRL = n => (n||0).toLocaleString('pt-BR', {style:'currency', currency:'BRL'});
+  const INT = n => Math.round(n||0).toLocaleString('pt-BR');
+  const PCT = n => (100*(n||0)).toLocaleString('pt-BR', {maximumFractionDigits:2}) + '%';
+  const todayLocal = () => new Date().toLocaleDateString('sv-SE');
+  const monthStartLocal = () => { const d=new Date(); return new Date(d.getFullYear(), d.getMonth(), 1).toLocaleDateString('sv-SE'); };
+  const fmtDatePt = iso => { const [y,m,dd] = iso.split('-'); return `${dd}/${m}/${y}`; };
+
+  const budgets = {}; // slug -> Total combinado com o cliente (atualizado por mim via chat, embutido no HTML)
+  let BUILD_TIME = null;
+  const metricsCache = {}; // preenchido a partir de metrics.json (atualizado a cada hora pelo GitHub Actions)
+  PRODUCTS.forEach(p => budgets[p.slug] = p.seedTotal);
+
+  // VISÃO GERAL = a conta inteira, igual ao Meta: produtos ativos (PRODUCTS) + toda
+  // campanha encerrada que tiver dados no período (ex.: Now Campestre). Montada em loadData().
+  // Resumo rápido e Verbas continuam usando só PRODUCTS (ativos).
+  let OVERVIEW = PRODUCTS.slice();
+  let REACH = {}; // alcance consolidado pelo Meta: { last7|month: { account, campaigns:{nome:n} } }
+  const PRETTY_NAMES = {};
+  function prettyCampaignName(c){
+    const m = c.match(/LUZIAC_([A-Za-z0-9]+)[-_]/);
+    if(!m) return c;
+    return PRETTY_NAMES[m[1]] || m[1].replace(/([a-z])([A-Z])/g, '$1 $2');
+  }
+
+  function cycleStart(){
+    const d = new Date();
+    const day = d.getDate();
+    return day >= 10 ? new Date(d.getFullYear(), d.getMonth(), 10) : new Date(d.getFullYear(), d.getMonth()-1, 10);
+  }
+  function cycleStartISO(){ return cycleStart().toLocaleDateString('sv-SE'); }
+  function cycleEndLabel(){
+    const s = cycleStart();
+    const next = new Date(s.getFullYear(), s.getMonth()+1, 9);
+    return fmtDatePt(next.toLocaleDateString('sv-SE'));
+  }
+
+  // Verba (Total/Investido/Saldo): Investido é acumulado do ano corrente (não reseta
+  // no dia 10) — o Total é o valor que o time atualiza manualmente sempre que o
+  // cliente envia uma nova verba, e o Saldo é sempre Total - Investido.
+  function yearStartISO(){
+    return new Date(new Date().getFullYear(), 0, 1).toLocaleDateString('sv-SE');
+  }
+
+  function periodRange(preset){
+    const today = todayLocal();
+    if(preset==='7d'){
+      // igual ao "Últimos 7 dias" do Meta: 7 dias completos, de ontem para trás (sem hoje)
+      const f = new Date(); f.setDate(f.getDate()-7);
+      const t = new Date(); t.setDate(t.getDate()-1);
+      return { from: f.toLocaleDateString('sv-SE'), to: t.toLocaleDateString('sv-SE'), label:'últimos 7 dias' };
+    }
+    if(preset==='cycle'){
+      return { from: cycleStartISO(), to: today, label:'ciclo atual (dia 10)' };
+    }
+    if(preset==='custom'){
+      const fromEl = document.getElementById('resumoCustomFrom');
+      const toEl = document.getElementById('resumoCustomTo');
+      let from = fromEl.value || monthStartLocal();
+      let to = toEl.value || today;
+      if(to > today) to = today;
+      if(from > to) from = to;
+      return { from, to, label:'período personalizado' };
+    }
+    return { from: monthStartLocal(), to: today, label:'mês corrente' };
+  }
+
+  function getActivePeriod(){
+    const btn = document.querySelector('#resumoPeriodBtns .period-btn.active');
+    return btn ? btn.dataset.period : 'month';
+  }
+
+  function toggleCustomPeriodUI(){
+    document.getElementById('resumoCustomWrap').classList.toggle('show', getActivePeriod()==='custom');
+  }
+
+  function initCustomPeriodInputs(){
+    const today = todayLocal();
+    const fromEl = document.getElementById('resumoCustomFrom');
+    const toEl = document.getElementById('resumoCustomTo');
+    fromEl.max = today; toEl.max = today;
+    if(!fromEl.value) fromEl.value = monthStartLocal();
+    if(!toEl.value) toEl.value = today;
+  }
+
+  function selectedSlugs(){
+    const v = document.getElementById('resumoProduct').value;
+    if(!v) return OVERVIEW.map(p=>p.slug);
+    return [v];
+  }
+  function selectedLabel(){
+    const v = document.getElementById('resumoProduct').value;
+    if(!v) return 'Todos os produtos';
+    return OVERVIEW.find(p=>p.slug===v).label;
+  }
+
+  /* ---------------- cache aggregation (dados vêm do db, atualizados por hora) ---------------- */
+  function dailyInRange(slug, from, to){
+    const doc = metricsCache[slug];
+    if(!doc || !doc.daily) return [];
+    return doc.daily.filter(r => r.d >= from && r.d <= to);
+  }
+  function sumTotals(slugs, from, to){
+    let spend=0, impr=0, clicks=0, leads=0, reach=0;
+    slugs.forEach(slug=>{
+      dailyInRange(slug, from, to).forEach(r=>{
+        spend+=r.spend||0; impr+=r.impr||0; clicks+=r.clicks||0; leads+=r.leads||0; reach+=r.reach||0;
+      });
+    });
+    return { spend, impr, clicks, leads, reach };
+  }
+  function computeTotals(slugs, from, to){
+    const t = sumTotals(slugs, from, to);
+    return {
+      actions_lead: t.leads,
+      reach: t.reach,
+      spend: t.spend,
+      impressions: t.impr,
+      link_clicks: t.clicks,
+      cost_per_action_type_lead: t.leads>0 ? t.spend/t.leads : 0,
+      cpm: t.impr>0 ? 1000*t.spend/t.impr : 0,
+      cost_per_action_type_link_click: t.clicks>0 ? t.spend/t.clicks : 0,
+      website_ctr_link_click: t.impr>0 ? t.clicks/t.impr : 0,
+    };
+  }
+  function dailySeriesFor(slugs, from, to){
+    const byDate = {};
+    slugs.forEach(slug=>{
+      dailyInRange(slug, from, to).forEach(r=>{
+        byDate[r.d] = (byDate[r.d]||0) + (r.leads||0);
+      });
+    });
+    return Object.keys(byDate).sort().map(d=>({ date:d, leads:byDate[d] }));
+  }
+  function byCampaignTotals(slugs, from, to){
+    const map = {};
+    slugs.forEach(slug=>{
+      const p = OVERVIEW.find(pp=>pp.slug===slug);
+      const t = sumTotals([slug], from, to);
+      map[p.campaign] = { leads: t.leads, spend: t.spend };
+    });
+    return map;
+  }
+  function breakdownFor(slugs, periodKey, dim){
+    const combined = {};
+    slugs.forEach(slug=>{
+      const doc = metricsCache[slug];
+      const catMap = doc && doc.breakdown && doc.breakdown[periodKey] && doc.breakdown[periodKey][dim];
+      if(!catMap) return;
+      Object.entries(catMap).forEach(([k,v])=>{ combined[k] = (combined[k]||0) + (v||0); });
+    });
+    return combined;
+  }
+
+  function populateProductSelect(){
+    const sel = document.getElementById('resumoProduct');
+    const prev = sel.value;
+    // encerradas: só as que gastaram nos últimos 60 dias (as antigas seguem somando em "Todos")
+    const since = (()=>{ const d=new Date(); d.setDate(d.getDate()-60); return d.toLocaleDateString('sv-SE'); })();
+    const ended = OVERVIEW.filter(p=>p.encerrada && sumTotals([p.slug], since, todayLocal()).spend > 0);
+    sel.innerHTML = '<option value="">Todos os produtos</option>' +
+      PRODUCTS.map(p=>`<option value="${p.slug}">${p.label}</option>`).join('') +
+      (ended.length ? '<optgroup label="Encerradas">' + ended.map(p=>`<option value="${p.slug}">${p.label}</option>`).join('') + '</optgroup>' : '');
+    if([...sel.options].some(o=>o.value===prev)) sel.value = prev;
+  }
+
+  const els = {
+    refreshBtn: document.getElementById('refreshBtn'),
+    refreshIcon: document.getElementById('refreshIcon'),
+    updatedAt: document.getElementById('updatedAt'),
+  };
+
+  /* ---------------- tabs ---------------- */
+  document.querySelectorAll('.tab-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelector(`.tab-panel[data-panel="${btn.dataset.tab}"]`).classList.add('active');
+    });
+  });
+
+  /* ---------------- notices ---------------- */
+
+  // Leads/CPL batem com o Ads Manager; os breakdowns abaixo (gênero/idade/plataforma/
+  // dispositivo) só existem no Windsor, então a soma pode variar 1-3 leads do total oficial.
+  function genderRows(map){
+    return [
+      {label:'Masculino', n: map.male||0, color:'var(--pink)'},
+      {label:'Feminino',  n: map.female||0, color:'var(--teal)'},
+    ];
+  }
+  function ageRows(map){
+    return [
+      {label:'45–54', n: map['45-54']||0, color:'var(--pink)'},
+      {label:'35–44', n: map['35-44']||0, color:'var(--teal)'},
+      {label:'65+',   n: map['65+']||0,   color:'var(--gold)'},
+      {label:'25–34', n: map['25-34']||0, color:'var(--orange)'},
+      {label:'55–64', n: map['55-64']||0, color:'var(--teal-dark)'},
+      {label:'18–24', n: map['18-24']||0, color:'var(--green)'},
+    ];
+  }
+  function platformRows(map){
+    return [
+      {label:'Facebook', n: map.facebook||0, color:'var(--pink)'},
+      {label:'Instagram', n: map.instagram||0, color:'var(--teal)'},
+      {label:'Audience Network', n: map.audience_network||0, color:'var(--teal-dark)'},
+    ];
+  }
+  function deviceRows(map){
+    return [
+      {label:'App mobile', n: map.mobile_app||0, color:'var(--pink)'},
+      {label:'Web mobile', n: map.mobile_web||0, color:'var(--teal)'},
+      {label:'Desktop', n: map.desktop||0, color:'var(--teal-dark)'},
+    ];
+  }
+
+  const tip = document.getElementById('tip');
+  function showTip(html, evt){ tip.innerHTML = html; tip.classList.add('show'); moveTip(evt); }
+  function moveTip(evt){ tip.style.left = evt.clientX + 'px'; tip.style.top = (evt.clientY - 12) + 'px'; }
+  function hideTip(){ tip.classList.remove('show'); }
+  function donutPct(n, total){ return (100*n/total).toLocaleString('pt-BR', {maximumFractionDigits:1}) + '%'; }
+
+  function renderDonut(svgId, legendId, rows){
+    const svg = document.getElementById(svgId);
+    const leg = document.getElementById(legendId);
+    svg.innerHTML = ''; leg.innerHTML = '';
+    const total = rows.reduce((a,d)=>a+d.n,0) || 1;
+    const cx=52, cy=52, r=42, rInner=24;
+    let angle = -90;
+    const ns = 'http://www.w3.org/2000/svg';
+    rows.forEach(d=>{
+      const frac = d.n/total;
+      const sweep = frac*360;
+      if(sweep>0){
+        const a0 = angle*Math.PI/180, a1 = (angle+Math.max(sweep,0.001))*Math.PI/180;
+        const x0 = cx + r*Math.cos(a0), y0 = cy + r*Math.sin(a0);
+        const x1 = cx + r*Math.cos(a1), y1 = cy + r*Math.sin(a1);
+        const xi0 = cx + rInner*Math.cos(a1), yi0 = cy + rInner*Math.sin(a1);
+        const xi1 = cx + rInner*Math.cos(a0), yi1 = cy + rInner*Math.sin(a0);
+        const large = sweep>180?1:0;
+        const path = document.createElementNS(ns,'path');
+        path.setAttribute('d', `M ${x0} ${y0} A ${r} ${r} 0 ${large} 1 ${x1} ${y1} L ${xi0} ${yi0} A ${rInner} ${rInner} 0 ${large} 0 ${xi1} ${yi1} Z`);
+        path.setAttribute('fill', d.color);
+        path.setAttribute('class','seg');
+        path.addEventListener('mousemove', e=>{ showTip(`${d.label}: <b>${d.n}</b> (${donutPct(d.n,total)})`, e); });
+        path.addEventListener('mouseleave', hideTip);
+        svg.appendChild(path);
+      }
+      angle += sweep;
+    });
+    const t1 = document.createElementNS(ns,'text');
+    t1.setAttribute('x',cx); t1.setAttribute('y',cy+1); t1.setAttribute('text-anchor','middle');
+    t1.setAttribute('fill','var(--ink)'); t1.setAttribute('font-family',"Poppins");
+    t1.setAttribute('font-size','16'); t1.setAttribute('font-weight','600');
+    t1.textContent = total;
+    svg.appendChild(t1);
+
+    rows.forEach(d=>{
+      const item = document.createElement('div');
+      item.className='item';
+      item.innerHTML = `<span class="sw" style="background:${d.color}"></span>${d.label}<span class="pct">${donutPct(d.n,total)}</span>`;
+      leg.appendChild(item);
+    });
+  }
+
+  function renderDonuts(slugs, periodKey, periodNote){
+    const genderMap = breakdownFor(slugs, periodKey, 'gender');
+    const ageMap = breakdownFor(slugs, periodKey, 'age');
+    const platformMap = breakdownFor(slugs, periodKey, 'platform');
+    const deviceMap = breakdownFor(slugs, periodKey, 'device');
+    renderDonut('d-gender','l-gender', genderRows(genderMap));
+    renderDonut('d-age','l-age', ageRows(ageMap));
+    renderDonut('d-platform','l-platform', platformRows(platformMap));
+    renderDonut('d-device','l-device', deviceRows(deviceMap));
+    const sub = document.getElementById('donutsSub');
+    if(sub) sub.textContent = `leads por gênero, idade, plataforma e dispositivo · referente a ${periodNote} · atualizado por hora`;
+  }
+
+  /* ---------------- render: resumo ---------------- */
+  function renderResumo(totals, dateFrom, dateTo, periodLabel, reachValue){
+    document.getElementById('resumoPeriod').textContent = `${fmtDatePt(dateFrom)} – ${fmtDatePt(dateTo)} (${periodLabel})`;
+    document.getElementById('resumoLeads').textContent = INT(totals.actions_lead);
+    document.getElementById('resumoReach').textContent = reachValue != null
+      ? `leads de formulário do Meta · alcance de ${INT(reachValue)} pessoas`
+      : 'leads de formulário do Meta';
+    document.getElementById('resumoSpend').textContent = BRL(totals.spend);
+    document.getElementById('resumoCpl').textContent = BRL(totals.cost_per_action_type_lead);
+    document.getElementById('resumoImpr').textContent = INT(totals.impressions);
+    document.getElementById('resumoCpm').textContent = BRL(totals.cpm);
+    document.getElementById('resumoCpcLink').textContent = BRL(totals.cost_per_action_type_link_click);
+    document.getElementById('resumoCtrLink').textContent = PCT(totals.website_ctr_link_click);
+
+    const impr = Number(totals.impressions) || 0;
+    const clicks = Number(totals.link_clicks) || 0;
+    const leads = Number(totals.actions_lead) || 0;
+    document.getElementById('resumoFunnelImpr').textContent = INT(impr);
+    document.getElementById('resumoFunnelClicks').textContent = INT(clicks);
+    document.getElementById('resumoFunnelLeads').textContent = INT(leads);
+    document.getElementById('resumoFunnelPct1').textContent = impr>0 ? PCT(clicks/impr) : '—';
+    document.getElementById('resumoFunnelPct2').textContent = clicks>0 ? PCT(leads/clicks) : '—';
+  }
+
+  function renderTrend(rows, periodLabel){
+    document.getElementById('trendSub').textContent = `leads por dia · ${periodLabel}`;
+    const svg = document.getElementById('trendChart');
+    svg.innerHTML = '';
+    const ns = 'http://www.w3.org/2000/svg';
+    const W = 900, H = 190, padL = 30, padR = 14, padT = 24, padB = 24;
+    const plotW = W - padL - padR, plotH = H - padT - padB;
+    if(!rows.length){ return; }
+    const max = Math.max(...rows.map(r=>r.leads), 1);
+    const n = rows.length;
+    const x = i => padL + (n<=1 ? plotW/2 : plotW * i/(n-1));
+    const y = v => padT + plotH - (plotH * v/max);
+
+    [0, 0.5, 1].forEach(f=>{
+      const gy = padT + plotH*(1-f);
+      const line = document.createElementNS(ns,'line');
+      line.setAttribute('x1',padL); line.setAttribute('x2',W-padR);
+      line.setAttribute('y1',gy); line.setAttribute('y2',gy);
+      line.setAttribute('stroke','var(--border)'); line.setAttribute('stroke-width','1');
+      svg.appendChild(line);
+      const lbl = document.createElementNS(ns,'text');
+      lbl.setAttribute('x',4); lbl.setAttribute('y',gy+4);
+      lbl.setAttribute('font-size','10'); lbl.setAttribute('fill','var(--muted)'); lbl.setAttribute('font-family',"Poppins");
+      lbl.textContent = Math.round(max*f);
+      svg.appendChild(lbl);
+    });
+
+    const pts = rows.map((r,i)=>`${x(i)},${y(r.leads)}`).join(' ');
+    const poly = document.createElementNS(ns,'polyline');
+    poly.setAttribute('points', pts);
+    poly.setAttribute('fill','none'); poly.setAttribute('stroke','var(--accent)'); poly.setAttribute('stroke-width','2.5');
+    poly.setAttribute('stroke-linejoin','round'); poly.setAttribute('stroke-linecap','round');
+    svg.appendChild(poly);
+
+    const step = Math.ceil(n/8);
+    rows.forEach((r,i)=>{
+      const cx = x(i), cy = y(r.leads);
+      const dot = document.createElementNS(ns,'circle');
+      dot.setAttribute('cx',cx); dot.setAttribute('cy',cy); dot.setAttribute('r','3.2');
+      dot.setAttribute('fill','var(--accent)');
+      svg.appendChild(dot);
+
+      const val = document.createElementNS(ns,'text');
+      val.setAttribute('x',cx); val.setAttribute('y',cy-8); val.setAttribute('text-anchor','middle');
+      val.setAttribute('font-size','10.5'); val.setAttribute('fill','var(--accent)'); val.setAttribute('font-family',"Poppins"); val.setAttribute('font-weight','600');
+      val.textContent = r.leads;
+      svg.appendChild(val);
+
+      if(i%step===0 || i===n-1){
+        const [yy,mm,dd] = r.date.split('-');
+        const xl = document.createElementNS(ns,'text');
+        xl.setAttribute('x',cx); xl.setAttribute('y',H-6); xl.setAttribute('text-anchor','middle');
+        xl.setAttribute('font-size','10'); xl.setAttribute('fill','var(--muted)');
+        xl.textContent = `${dd}/${mm}`;
+        svg.appendChild(xl);
+      }
+    });
+  }
+
+  function renderCampanhas(rowsMap, campaignFilter){
+    const tbody = document.getElementById('campanhasBody');
+    tbody.innerHTML = '';
+    // ativos sempre aparecem; encerrados só se tiveram gasto ou lead no período
+    const list = (campaignFilter
+      ? OVERVIEW.filter(p=>p.campaign===campaignFilter)
+      : OVERVIEW).filter(p=>!p.encerrada || ((rowsMap[p.campaign]||{}).spend>0 || (rowsMap[p.campaign]||{}).leads>0));
+    const maxLeads = Math.max(...list.map(p=>(rowsMap[p.campaign]||{}).leads||0), 1);
+    list.forEach(p=>{
+      const row = rowsMap[p.campaign] || {leads:0, spend:0};
+      const cpl = row.leads>0 ? row.spend/row.leads : 0;
+      const w = Math.max(3, Math.round(100*row.leads/maxLeads));
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td class="name">${p.label}${p.encerrada ? ' <span class="pill neutral-pill">encerrada</span>' : ''}</td>
+        <td class="num-col"><div class="leadbar"><div class="track2"><div class="fill2" style="width:${w}%"></div></div><span class="n num">${INT(row.leads)}</span></div></td>
+        <td class="num-col num">${row.leads>0 ? BRL(cpl) : '—'}</td>
+        <td class="num-col num">${BRL(row.spend)}</td>`;
+      tbody.appendChild(tr);
+    });
+  }
+
+  /* ---------------- render: produtos ---------------- */
+  // Variação % entre o período atual e o anterior, com seta e cor.
+  // goodWhen: 'up' (mais é melhor), 'down' (menos é melhor) ou 'none' (neutro).
+  function deltaHtml(cur, prev, goodWhen, fmt){
+    if(!(prev > 0)){
+      return cur > 0 ? `<span class="delta"><span class="chg neutral">novo</span></span>` : `<span class="delta"><span class="prev">—</span></span>`;
+    }
+    const pct = 100*(cur - prev)/prev;
+    const r = Math.round(pct);
+    const arrow = r > 0 ? '▲' : (r < 0 ? '▼' : '●');
+    let cls = 'neutral';
+    if(goodWhen !== 'none' && r !== 0){
+      const up = r > 0;
+      cls = (goodWhen === 'up') === up ? (up ? 'up-good' : 'down-good') : (up ? 'up-bad' : 'down-bad');
+    }
+    const txt = (r > 0 ? '+' : '') + r.toLocaleString('pt-BR') + '%';
+    return `<span class="delta" title="Período anterior: ${fmt(prev)}"><span class="chg ${cls}">${arrow} ${txt}</span><span class="prev">ant. ${fmt(prev)}</span></span>`;
+  }
+
+  function renderProdutos(curMap, prevMap, dateFrom, dateTo, prevFrom, prevTo){
+    const cmp = document.getElementById('cmpToggle').checked;
+    document.getElementById('produtosTableWrap').classList.toggle('no-cmp', !cmp);
+    document.getElementById('produtosPeriod').textContent =
+      `${fmtDatePt(dateFrom)} – ${fmtDatePt(dateTo)} (últimos 7 dias)` +
+      (cmp ? ` · comparado com ${fmtDatePt(prevFrom)} – ${fmtDatePt(prevTo)}` : '');
+    const tbody = document.getElementById('produtosBody');
+    tbody.innerHTML = '';
+    const tot = {leads:0, spend:0}, totPrev = {leads:0, spend:0};
+    const cplFmt = v => BRL(v);
+    PRODUCTS.forEach(p=>{
+      const row = curMap[p.campaign] || {leads:0, spend:0};
+      const prev = prevMap[p.campaign] || {leads:0, spend:0};
+      tot.leads += row.leads; tot.spend += row.spend; totPrev.leads += prev.leads; totPrev.spend += prev.spend;
+      const cpl = row.leads>0 ? row.spend/row.leads : 0;
+      const cplPrev = prev.leads>0 ? prev.spend/prev.leads : 0;
+      const tr = document.createElement('tr');
+      tr.dataset.name = p.label.toLowerCase();
+      tr.innerHTML = `
+        <td class="name">${p.label}</td>
+        <td class="num-col num"><span class="cell-v">${INT(row.leads)}</span>${deltaHtml(row.leads, prev.leads, 'up', INT)}</td>
+        <td class="num-col num"><span class="cell-v">${row.leads>0 ? BRL(cpl) : '—'}</span>${row.leads>0 ? deltaHtml(cpl, cplPrev, 'down', cplFmt) : ''}</td>
+        <td class="num-col num"><span class="cell-v">${BRL(row.spend)}</span>${deltaHtml(row.spend, prev.spend, 'none', BRL)}</td>`;
+      tbody.appendChild(tr);
+    });
+    const tcpl = tot.leads>0 ? tot.spend/tot.leads : 0, tcplPrev = totPrev.leads>0 ? totPrev.spend/totPrev.leads : 0;
+    const tr = document.createElement('tr');
+    tr.className = 'total-row';
+    tr.dataset.name = '';
+    tr.innerHTML = `
+      <td class="name">Total</td>
+      <td class="num-col num"><span class="cell-v">${INT(tot.leads)}</span>${deltaHtml(tot.leads, totPrev.leads, 'up', INT)}</td>
+      <td class="num-col num"><span class="cell-v">${tot.leads>0 ? BRL(tcpl) : '—'}</span>${tot.leads>0 ? deltaHtml(tcpl, tcplPrev, 'down', cplFmt) : ''}</td>
+      <td class="num-col num"><span class="cell-v">${BRL(tot.spend)}</span>${deltaHtml(tot.spend, totPrev.spend, 'none', BRL)}</td>`;
+    tbody.appendChild(tr);
+  }
+
+  document.getElementById('cmpToggle').addEventListener('change', refreshAll);
+  document.getElementById('productFilter').addEventListener('input', (e)=>{
+    const q = e.target.value.trim().toLowerCase();
+    document.querySelectorAll('#produtosBody tr').forEach(tr=>{
+      tr.classList.toggle('hidden', q && !tr.dataset.name.includes(q));
+    });
+  });
+
+  /* ---------------- render: verbas ---------------- */
+  const RING_R = 16;
+  const RING_C = 2 * Math.PI * RING_R; // ~100.53
+
+  // Gasto do produto desde o início do ciclo atual (dia 10 do mês).
+  function cycleSpend(slug){
+    const doc = metricsCache[slug];
+    const from = cycleStartISO();
+    return doc && doc.daily ? doc.daily.filter(r => r.d >= from).reduce((s,r)=>s+(r.spend||0), 0) : 0;
+  }
+
+  // Progresso do ciclo: quanto da verba disponível no início do ciclo (dia 10) já foi
+  // gasto até agora. Verba do ciclo = saldo atual + o que já foi gasto no ciclo.
+  // A cor compara com o tempo do ciclo que já passou (até a data "Válida até").
+  function paintVerbaRow(slug, totalSpend, dailySpend){
+    const tr = document.querySelector(`#verbasBody tr[data-slug="${slug}"]`);
+    if(!tr) return;
+    const budget = budgets[slug] || 0;
+    const remaining = budget - totalSpend;
+    const spentCycle = cycleSpend(slug);
+    const cycleBudget = remaining + spentCycle;
+    const usedPct = cycleBudget > 0 ? Math.round(100*spentCycle/cycleBudget) : (remaining < 0 ? 100 : 0);
+    const ringPct = Math.max(0, Math.min(100, usedPct));
+    // % do tempo do ciclo que já passou
+    const start = cycleStart();
+    const endIso = VERBA_VALID_UNTIL[slug];
+    const end = endIso ? new Date(endIso + 'T00:00:00') : new Date(start.getFullYear(), start.getMonth()+1, 10);
+    const timePct = Math.max(0, Math.min(100, 100*(Date.now() - start.getTime())/(end.getTime() - start.getTime())));
+    tr.querySelector('.spend-cell').textContent = BRL(totalSpend);
+    tr.querySelector('.daily-cell').textContent = BRL(dailySpend);
+    tr.querySelector('.remaining-cell').textContent = BRL(remaining);
+    const ringFill = tr.querySelector('.ring-fill');
+    const ringLabel = tr.querySelector('.ring-label');
+    ringFill.style.strokeDasharray = `${RING_C} ${RING_C}`;
+    ringFill.style.strokeDashoffset = RING_C * (1 - ringPct/100);
+    ringLabel.textContent = usedPct + '%';
+    tr.querySelector('.ring-wrap').title =
+      `Gasto no ciclo: ${BRL(spentCycle)} de ${BRL(Math.max(cycleBudget,0))} (${usedPct}%) · ${Math.round(timePct)}% do prazo já passou`;
+    if(remaining < 0){
+      ringFill.style.stroke = 'var(--bad)';              // verba estourada
+    } else if(usedPct > timePct + 10){
+      ringFill.style.stroke = 'var(--critical)';         // gastando bem mais rápido que o prazo
+    } else if(usedPct > timePct){
+      ringFill.style.stroke = 'var(--warn)';             // um pouco acima do ritmo
+    } else {
+      ringFill.style.stroke = 'var(--good)';             // dentro do ritmo
+    }
+  }
+
+  function buildVerbasTable(){
+    const tbody = document.getElementById('verbasBody');
+    tbody.innerHTML = '';
+    // semVerba:true = produto sem controle de verba (não aparece na aba Verbas)
+    PRODUCTS.filter(p=>!p.semVerba).forEach(p=>{
+      const tr = document.createElement('tr');
+      tr.dataset.slug = p.slug;
+      const validUntil = VERBA_VALID_UNTIL[p.slug];
+      tr.innerHTML = `
+        <td class="name">${p.label}</td>
+        <td class="num-col num budget-cell-static">${BRL(budgets[p.slug]||0)}</td>
+        <td class="num-col num spend-cell">—</td>
+        <td class="num-col num daily-cell">—</td>
+        <td class="num-col num remaining-cell">—</td>
+        <td class="num-col num">${validUntil ? fmtDatePt(validUntil) : '—'}</td>
+        <td><div class="ring-wrap">
+          <svg width="40" height="40" viewBox="0 0 40 40">
+            <circle class="ring-track" cx="20" cy="20" r="${RING_R}"></circle>
+            <circle class="ring-fill" cx="20" cy="20" r="${RING_R}"></circle>
+            <text class="ring-label" x="20" y="24" text-anchor="middle">0%</text>
+          </svg>
+        </div></td>`;
+      tbody.appendChild(tr);
+    });
+  }
+
+  function renderVerbas(){
+    PRODUCTS.filter(p=>!p.semVerba).forEach(p=>{
+      paintVerbaRow(p.slug, ytdSpend(p.slug), todaySpend(p.slug));
+    });
+  }
+
+  /* ---------------- boot / refresh ---------------- */
+  function refreshResumo(){
+    const preset = getActivePeriod();
+    const { from, to, label } = periodRange(preset);
+    const slugs = selectedSlugs();
+    const prodLabel = selectedLabel();
+    const fullLabel = slugs.length===OVERVIEW.length ? label : `${label} · ${prodLabel}`;
+
+    const totals = computeTotals(slugs, from, to);
+    const daily = dailySeriesFor(slugs, from, to);
+    const byCampaign = byCampaignTotals(OVERVIEW.map(p=>p.slug), from, to);
+    const filterCampaign = slugs.length===1 ? OVERVIEW.find(p=>p.slug===slugs[0]).campaign : null;
+
+    // Alcance: valor consolidado do Meta (só existe para "Últimos 7 dias" e "Mês corrente")
+    let reachValue = null;
+    const rk = preset==='7d' ? 'last7' : (preset==='month' ? 'month' : null);
+    if(rk && REACH[rk]){
+      if(slugs.length===OVERVIEW.length) reachValue = REACH[rk].account;
+      else {
+        const p = OVERVIEW.find(pp=>pp.slug===slugs[0]);
+        const cs = [p.campaign].concat(p.alsoCampaigns || []).filter(c => REACH[rk].campaigns[c] != null);
+        if(cs.length===1) reachValue = REACH[rk].campaigns[cs[0]];
+      }
+    }
+    renderResumo(totals, from, to, fullLabel, reachValue);
+    renderTrend(daily, fullLabel);
+    renderCampanhas(byCampaign, filterCampaign);
+
+    const periodKey = preset==='7d' ? 'last7' : 'month';
+    const periodNote = preset==='7d' ? 'últimos 7 dias' : (preset==='month' ? 'mês corrente' : 'aprox. mês corrente');
+    renderDonuts(slugs, periodKey, periodNote);
+  }
+
+  function refreshAll(){
+    const today = todayLocal();
+    const allSlugs = PRODUCTS.map(p=>p.slug);
+
+
+    // Resumo rápido: igual ao Meta — últimos 7 dias completos (ontem para trás, sem hoje)
+    // comparados com os 7 dias imediatamente anteriores.
+    const dayIso = n => { const d=new Date(); d.setDate(d.getDate()-n); return d.toLocaleDateString('sv-SE'); };
+    const curFrom = dayIso(7), curTo = dayIso(1), prevFrom = dayIso(14), prevTo = dayIso(8);
+    renderProdutos(byCampaignTotals(allSlugs, curFrom, curTo), byCampaignTotals(allSlugs, prevFrom, prevTo), curFrom, curTo, prevFrom, prevTo);
+    renderVerbas();
+    document.getElementById('verbasPeriod').textContent = 'saldo corrido — não reseta sozinho, só com novo aporte do cliente';
+
+    refreshResumo();
+
+    const d = new Date(BUILD_TIME);
+    els.updatedAt.textContent = 'dados atualizados às ' + d.toLocaleTimeString('pt-BR', {hour:'2-digit', minute:'2-digit'}) + ' de ' + d.toLocaleDateString('pt-BR');
+  }
+
+  els.refreshBtn.addEventListener('click', async ()=>{
+    const icon = document.getElementById('refreshIcon');
+    const before = BUILD_TIME;
+    els.refreshBtn.disabled = true;
+    icon.classList.add('spin');
+    let ok = true;
+    try { await loadData(); } catch(e){ ok = false; }
+    refreshAll();
+    await new Promise(r => setTimeout(r, 400));
+    icon.classList.remove('spin');
+    els.refreshBtn.disabled = false;
+    const agora = new Date().toLocaleTimeString('pt-BR', {hour:'2-digit', minute:'2-digit'});
+    const msg = !ok ? 'não foi possível conferir agora — tente de novo'
+      : (BUILD_TIME !== before ? 'dados novos carregados' : 'já está com os dados mais recentes (conferido às ' + agora + ')');
+    els.updatedAt.textContent += ' · ' + msg;
+  });
+  document.getElementById('resumoProduct').addEventListener('change', refreshResumo);
+  document.querySelectorAll('#resumoPeriodBtns .period-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      document.querySelectorAll('#resumoPeriodBtns .period-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      toggleCustomPeriodUI();
+      refreshResumo();
+    });
+  });
+  document.getElementById('resumoCustomFrom').addEventListener('change', refreshResumo);
+  document.getElementById('resumoCustomTo').addEventListener('change', refreshResumo);
+
+  async function loadData(){
+    const res = await fetch('metrics.json?t=' + Date.now(), {cache:'no-store'});
+    if(!res.ok) throw new Error('HTTP ' + res.status);
+    const raw = await res.json();
+    // Um produto pode ter mais de uma campanha (ex.: campanha renomeada no Gerenciador).
+    // Soma as campanhas listadas em campaign + alsoCampaigns.
+    const all = raw.campaigns || {};
+    PRODUCTS.forEach(p => {
+      const docs = [p.campaign].concat(p.alsoCampaigns || []).map(c => all[c]).filter(Boolean);
+      if(!docs.length){ metricsCache[p.slug] = undefined; return; }
+      const byDay = {}, breakdown = {};
+      docs.forEach(doc => {
+        (doc.daily || []).forEach(r => {
+          const x = byDay[r.d] || (byDay[r.d] = {d:r.d, spend:0, impr:0, clicks:0, leads:0, reach:0});
+          x.spend += r.spend||0; x.impr += r.impr||0; x.clicks += r.clicks||0; x.leads += r.leads||0; x.reach += r.reach||0;
+        });
+        Object.entries(doc.breakdown || {}).forEach(([per, dims]) => {
+          const bp = breakdown[per] || (breakdown[per] = {});
+          Object.entries(dims).forEach(([dim, cats]) => {
+            const bd = bp[dim] || (bp[dim] = {});
+            Object.entries(cats).forEach(([k, v]) => { bd[k] = (bd[k]||0) + (v||0); });
+          });
+        });
+      });
+      metricsCache[p.slug] = { campaign: p.campaign, daily: Object.values(byDay).sort((a,b) => a.d < b.d ? -1 : 1), breakdown };
+    });
+    const claimed = new Set(PRODUCTS.flatMap(p => [p.campaign].concat(p.alsoCampaigns || [])));
+    const extras = Object.keys(all).filter(c => !claimed.has(c)).sort().map((c, i) => {
+      const slug = 'enc-' + i;
+      metricsCache[slug] = all[c];
+      return { slug, label: prettyCampaignName(c), campaign: c, encerrada: true };
+    });
+    OVERVIEW = PRODUCTS.concat(extras);
+    REACH = raw.reach || {};
+    populateProductSelect();
+    BUILD_TIME = raw.updatedAt;
+  }
+
+  async function boot(){
+    buildVerbasTable();
+    populateProductSelect();
+    initCustomPeriodInputs();
+    try { await loadData(); }
+    catch(e){ els.updatedAt.textContent = 'não foi possível carregar os dados (' + e.message + ')'; }
+    refreshAll();
+  }
+
+  boot();
+})();
+</script>
+
+</body></html>
